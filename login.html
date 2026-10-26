@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Jewelix</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="login-page">
+
+  <main class="login-card">
+    <a href="index.html" class="login-brand">Jewelix<span> ✨</span></a>
+    <p class="login-subtitle">A little sparkle, made for you.</p>
+
+    <h1>Welcome Back!</h1>
+    <p class="login-description">Login to explore your favourite jewellery.</p>
+
+    <form id="loginForm">
+      <label for="loginName">Your Name</label>
+      <input type="text" id="loginName" placeholder="Enter your name" required>
+
+      <label for="loginEmail">Email Address</label>
+     <input type="text" id="loginEmail"
+       placeholder="Enter your full email address"
+       autocomplete="email" required>
+
+      <button type="submit" class="login-submit">Login to Jewelix</button>
+      <p id="loginMessage" class="login-message" aria-live="polite"></p>
+    </form>
+
+    <p class="login-footer">
+      New to Jewelix? Just enter your name and email to try the demo.
+    </p>
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </main>
+
+</body>
+</html>

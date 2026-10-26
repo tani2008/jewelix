@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Story | Jewelix</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fffaf7;
+      color: #49352f;
+      font-family: Arial, sans-serif;
+    }
+
+    .story-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 7%;
+      border-bottom: 1px solid #eee2dc;
+      background: #fffaf7;
+    }
+
+    .story-brand {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: #70483d;
+      text-decoration: none;
+    }
+
+    .story-brand span {
+      color: #bd9252;
+    }
+
+    .story-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .story-links a {
+      color: #70483d;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .story-links a:hover {
+      color: #bd9252;
+    }
+
+    .story-page {
+      max-width: 1150px;
+      margin: auto;
+      padding: 40px 24px 70px;
+    }
+
+    .story-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 35px;
+      padding: 35px;
+      border-radius: 28px;
+      background: #f4e8e2;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      color: #a47a57;
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .story-hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1.12;
+      font-weight: normal;
+      margin: 18px 0;
+    }
+
+    .story-hero h1 em {
+      color: #a66e59;
+    }
+
+    .story-hero p {
+      line-height: 1.8;
+    }
+
+    .story-image {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 180px 180px 20px 20px;
+    }
+
+    .story-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 14px 22px;
+      background: #70483d;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .story-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 75px auto 40px;
+    }
+
+    .story-intro h2,
+    .story-values h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(30px, 4vw, 43px);
+    }
+
+    .story-intro p {
+      line-height: 1.9;
+      color: #77665e;
+    }
+
+    .story-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .story-card {
+      background: white;
+      border: 1px solid #eee2dc;
+      border-radius: 18px;
+      padding: 28px 23px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px #70483d14;
+    }
+
+    .story-icon {
+      font-size: 30px;
+    }
+
+    .story-card h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: normal;
+    }
+
+    .story-card p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #77665e;
+    }
+
+    .story-values {
+      margin-top: 75px;
+      padding: 45px 30px;
+      text-align: center;
+      border-radius: 24px;
+      background: #f4e8e2;
+    }
+
+    .story-values p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.9;
+      color: #77665e;
+    }
+
+    .story-footer {
+      padding: 28px 20px;
+      text-align: center;
+      border-top: 1px solid #eee2dc;
+      color: #77665e;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .story-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .story-links {
+        gap: 14px;
+      }
+
+      .story-page {
+        padding: 22px 15px 45px;
+      }
+
+      .story-hero {
+        grid-template-columns: 1fr;
+        padding: 25px;
+      }
+
+      .story-image {
+        height: 300px;
+      }
+
+      .story-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .story-intro {
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="story-nav">
+    <a href="index.html" class="story-brand">
+      jewelix<span>✦</span>
+    </a>
+
+    <nav class="story-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#discover">Explore</a>
+      <a href="index.html#studio">Customize</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main class="story-page">
+
+    <section class="story-hero">
+      <div>
+        <p class="eyebrow">THE HEART BEHIND JEWELIX</p>
+
+        <h1>
+          Jewellery that feels
+          <em>like you.</em>
+        </h1>
+
+        <p>
+          Little details can hold big feelings.
+          Discover jewellery that celebrates your
+          individuality and turns your ideas into
+          something personal.
+        </p>
+
+        <a href="index.html#studio" class="story-button">
+          Create Your Own Piece ↗
+        </a>
+      </div>
+
+      <img
+        class="story-image"
+        src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85"
+        alt="Elegant jewellery collection">
+    </section>
+
+    <section class="story-intro">
+      <p class="eyebrow">OUR STORY</p>
+
+      <h2>More Than Just <em>Accessories</em></h2>
+
+      <p>
+        Jewelix is a jewellery customization concept
+        created for people who love expressing themselves
+        through the little details. We believe jewellery
+        can represent memories, creativity and personal style.
+      </p>
+    </section>
+
+    <section class="story-cards">
+
+      <article class="story-card">
+        <div class="story-icon">✧</div>
+        <h3>Our Vision</h3>
+        <p>
+          To make jewellery personalization simple,
+          inspiring and enjoyable, so everyone can
+          explore designs that reflect their taste.
+        </p>
+      </article>
+
+      <article class="story-card">
+        <div class="story-icon">♡</div>
+        <h3>Our Philosophy</h3>
+        <p>
+          Personal style has no single definition.
+          Every colour, charm and detail can help
+          express a different part of your story.
+        </p>
+      </article>
+
+      <article class="story-card">
+        <div class="story-icon">✦</div>
+        <h3>Our Promise</h3>
+        <p>
+          To create a welcoming space where you can
+          explore jewellery ideas, discover inspiration
+          and imagine your own signature designs.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="story-values">
+      <p class="eyebrow">YOUR STYLE, YOUR STORY</p>
+
+      <h2>Made Personal. Made Meaningful.</h2>
+
+      <p>
+        From initial necklaces to delicate hair accessories,
+        Jewelix celebrates the joy of creating something
+        that feels uniquely yours.
+      </p>
+
+      <a href="index.html#discover" class="story-button">
+        Explore The Collection ↗
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="story-footer">
+    <p>jewelix ✦</p>
+    <p>Little treasures, made personal.</p>
+    <p>© <span id="story-year"></span> Jewelix · Student Project Demo</p>
+  </footer>
+
+  <script>
+    document.getElementById("story-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

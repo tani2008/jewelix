@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Jewelix</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .checkout-page {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      color: #49352f;
+    }
+    .checkout-heading {
+      text-align: center;
+      font-family: Georgia, serif;
+    }
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .checkout-box {
+      padding: 25px;
+      border-radius: 18px;
+      background: #fff8f5;
+      border: 1px solid #eeded8;
+    }
+    .checkout-box input,
+    .checkout-box textarea,
+    .checkout-box select {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 8px 0 14px;
+      padding: 12px;
+      border: 1px solid #dfc9c0;
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
+    .place-order {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 12px;
+      background: #a96570;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    #order-message {
+      color: #426b45;
+      line-height: 1.6;
+    }
+    @media (max-width: 650px) {
+      .checkout-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="checkout-page">
+    <h1 class="checkout-heading">Jewelix Checkout ✨</h1>
+    <p class="checkout-heading">Almost yours! Complete your order details.</p>
+
+    <div class="checkout-layout">
+      <section class="checkout-box">
+        <h2>Delivery Details</h2>
+        <form id="checkout-form">
+          <label for="customer-name">Full Name</label>
+          <input id="customer-name" name="name" required>
+
+          <label for="customer-email">Email</label>
+          <input id="customer-email" name="email" type="email" required>
+
+          <label for="customer-phone">Phone Number</label>
+          <input id="customer-phone" name="phone" type="tel"
+                 pattern="[0-9]{10}" maxlength="10"
+                 placeholder="10-digit number" required>
+
+          <label for="customer-address">Delivery Address</label>
+          <textarea id="customer-address" name="address"
+                    rows="3" required></textarea>
+
+          <label for="customer-city">City</label>
+          <input id="customer-city" name="city" required>
+
+          <label for="customer-pincode">PIN Code</label>
+          <input id="customer-pincode" name="pincode"
+                 inputmode="numeric" pattern="[0-9]{6}"
+                 maxlength="6" required>
+
+          <label for="payment-method">Payment Method</label>
+          <select id="payment-method" name="payment" required>
+            <option value="COD">Cash on Delivery (Demo)</option>
+          </select>
+
+          <button class="place-order" type="submit">Place Demo Order</button>
+          <p id="order-message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="checkout-box">
+        <h2>Order Summary</h2>
+        <div id="checkout-items">Your bag items will appear here.</div>
+        <hr>
+        <p id="checkout-total"><strong>Total: ₹0</strong></p>
+        <a href="index.html">← Back to Shopping</a>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const checkoutItems = document.getElementById("checkout-items");
+    const checkoutTotal = document.getElementById("checkout-total");
+
+    function getCartItems() {
+      // Read the cart saved by the existing Jewelix website
+      for (const key of ["jewelixCart", "cart"]) {
+        try {
+          const value = JSON.parse(localStorage.getItem(key));
+          if (Array.isArray(value) && value.length) return value;
+        } catch (error) {}
+      }
+      return [];
+    }
+
+    function showOrderSummary() {
+      const cart = getCartItems();
+
+      if (!cart.length) {
+        checkoutItems.textContent = "Your bag is empty. Add jewellery before checkout.";
+        checkoutTotal.innerHTML = "<strong>Total: ₹0</strong>";
+        return;
+      }
+
+      let total = 0;
+      checkoutItems.replaceChildren();
+
+      cart.forEach(item => {
+        const quantity = Number(item.quantity || 1);
+        const price = Number(item.price || 0);
+        total += price * quantity;
+
+        const row = document.createElement("p");
+        row.textContent =
+          `${item.name || item.title || "Jewellery"} × ${quantity} — ₹${price * quantity}`;
+        checkoutItems.appendChild(row);
+      });
+
+      checkoutTotal.textContent = `Total: ₹${total}`;
+    }
+
+    showOrderSummary();
+
+    document.getElementById("checkout-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!getCartItems().length) {
+        document.getElementById("order-message").textContent =
+          "Your bag is empty. Please add a product first.";
+        return;
+      }
+
+      document.getElementById("order-message").textContent =
+        "Demo order placed successfully! Thank you for choosing Jewelix. 💗";
+
+      // Demo only: no real payment or order submission occurs.
+      localStorage.removeItem("jewelixCart");
+      localStorage.removeItem("cart");
+      showOrderSummary();
+      this.reset();
+    });
+  </script>
+</body>
+</html>

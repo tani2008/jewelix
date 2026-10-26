@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jewelix - Made Personal</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+
+        <a class="brand" href="#home">
+            jewelix<span>✦</span>
+        </a>
+
+       <nav class="main-nav">
+    <a href="#home">Home</a>
+    <a href="#discover">Explore</a>
+    <a href="#discover">Categories</a>
+    <a href="#trending">Trending</a>
+    <a href="#studio">Customize</a>
+    <a href="about.html">Our Story</a>
+    <a href="contact.html">Contact</a>
+</nav>
+      <div class="header-actions">
+    <button id="wishlist-toggle">
+        ♡ <span id="wishlist-count">0</span>
+    </button>
+
+    <button id="cart-toggle">
+        Bag <span id="cart-count">0</span>
+    </button>
+
+    <div id="userArea">
+        <a href="login.html" class="login-nav-link">Login</a>
+    </div>
+</div>
+    </header>
+
+
+    <!-- HOME SECTION -->
+    <main>
+
+        <section class="hero section-wrap" id="home">
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    SMALL DETAILS. BIG FEELING.
+                </p>
+
+                <h1>
+                    Your style.<br>
+                    <em>Your story.</em>
+                </h1>
+
+                <p class="hero-description">
+                    Discover little treasures and make them
+                    completely yours.
+                </p>
+
+                <a class="primary-button" href="#studio">
+                    Design Your Piece ↗
+                </a>
+
+            </div>
+
+            <div class="hero-art">
+                <img
+                    src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80"
+                    alt="Beautiful gold jewellery">
+            </div>
+
+        </section>
+
+
+        <!-- PINTEREST STYLE GALLERY -->
+        <section class="gallery-section section-wrap" id="discover">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE JEWELIX EDIT</p>
+                    <h2>Find Your <em>Inspiration</em></h2>
+                </div>
+            </div>
+
+            <div class="gallery-tools">
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search jewellery...">
+
+                <div class="filter-list">
+                    <button class="filter-chip active" data-filter="All">
+                        All Pieces
+                    </button>
+
+                    <button class="filter-chip" data-filter="Necklaces">
+                        Necklaces
+                    </button>
+
+                    <button class="filter-chip" data-filter="Earrings">
+                        Earrings
+                    </button>
+
+                    <button class="filter-chip" data-filter="Hair Accessories">
+                        Hair Accessories
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="masonry-grid" id="product-grid"></div>
+
+            <p id="empty-message" hidden>
+                No products found.
+            </p>
+
+        </section>
+
+
+        <!-- CUSTOMIZATION STUDIO -->
+        <section class="studio-section" id="studio">
+
+            <div class="section-wrap">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR CREATION LAB</p>
+                        <h2>Make It <em>Personal.</em></h2>
+                    </div>
+                </div>
+
+                <div class="custom-studio">
+
+                    <!-- LEFT: LIVE PREVIEW -->
+                    <div class="custom-preview">
+
+                        <div class="preview-topline">
+                            <span>LIVE PREVIEW</span>
+                            <span>● UPDATING</span>
+                        </div>
+
+                        <div class="necklace-stage">
+
+                            <svg
+                                class="necklace-svg"
+                                viewBox="0 0 440 370">
+
+                                <defs>
+                                    <linearGradient
+                                        id="metal-gradient"
+                                        x1="0" y1="0"
+                                        x2="1" y2="1">
+
+                                        <stop offset="0%"
+                                            stop-color="#fff0a6"/>
+
+                                        <stop offset="25%"
+                                            stop-color="#c28b30"/>
+
+                                        <stop offset="50%"
+                                            stop-color="#f8dc7b"/>
+
+                                        <stop offset="100%"
+                                            stop-color="#a86d20"/>
+
+                                    </linearGradient>
+                                </defs>
+
+                                <path
+                                    d="M65 42 C78 270, 362 270, 375 42"
+                                    fill="none"
+                                    stroke="url(#metal-gradient)"
+                                    stroke-width="4"/>
+
+                                <g transform="translate(220 222)">
+
+                                    <circle
+                                        r="25"
+                                        fill="url(#metal-gradient)"/>
+
+                                    <circle
+                                        r="19"
+                                        fill="#fff7e9"/>
+
+                                    <text
+                                        id="pendant-initial"
+                                        x="0" y="8"
+                                        text-anchor="middle"
+                                        font-size="25"
+                                        fill="#b17b29">
+                                        J
+                                    </text>
+
+                                    <text
+                                        id="pendant-charm"
+                                        x="0" y="-34"
+                                        text-anchor="middle"
+                                        font-size="18"
+                                        fill="#b17b29">
+                                        ✦
+                                    </text>
+
+                                </g>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="preview-footer">
+                            <span>YOUR DESIGN</span>
+                            <span id="preview-finish">Classic gold</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT: CONTROLS -->
+                    <div class="custom-content">
+
+                        <div class="studio-intro">
+                            <p class="step-tag">STEP 01 / YOUR NECKLACE</p>
+
+                            <h3>Build Your Signature Piece</h3>
+
+                            <p>Choose details that feel like you.</p>
+                        </div>
+
+
+                        <!-- INITIAL -->
+                        <div class="control-group">
+
+                            <label for="initial-input">
+                                Your Initial
+                            </label>
+
+                            <input
+                                class="text-control"
+                                id="initial-input"
+                                type="text"
+                                maxlength="2"
+                                value="J"
+                                placeholder="Enter your initial">
+
+                        </div>
+
+
+                        <!-- METAL FINISH -->
+                        <fieldset class="control-group">
+
+                            <legend>Choose Your Finish</legend>
+
+                            <div class="finish-options">
+
+                                <button
+                                    class="finish-option selected"
+                                    type="button"
+                                    data-finish="Gold"
+                                    aria-pressed="true">
+
+                                    <span class="swatch gold-swatch"></span>
+                                    Gold
+
+                                </button>
+
+                                <button
+                                    class="finish-option"
+                                    type="button"
+                                    data-finish="Silver"
+                                    aria-pressed="false">
+
+                                    <span class="swatch silver-swatch"></span>
+                                    Silver
+
+                                </button>
+
+                                <button
+                                    class="finish-option"
+                                    type="button"
+                                    data-finish="Rose gold"
+                                    aria-pressed="false">
+
+                                    <span class="swatch rose-swatch"></span>
+                                    Rose Gold
+
+                                </button>
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <!-- CHARMS -->
+                        <fieldset class="control-group">
+
+                            <legend>Pick a Tiny Charm</legend>
+
+                            <div class="charm-options">
+
+                                <button
+                                    class="charm-option selected"
+                                    type="button"
+                                    data-charm="✦">
+                                    ✦
+                                </button>
+
+                                <button
+                                    class="charm-option"
+                                    type="button"
+                                    data-charm="♡">
+                                    ♡
+                                </button>
+
+                                <button
+                                    class="charm-option"
+                                    type="button"
+                                    data-charm="✿">
+                                    ✿
+                                </button>
+
+                                <button
+                                    class="charm-option"
+                                    type="button"
+                                    data-charm="☾">
+                                    ☾
+                                </button>
+
+                                <button
+                                    class="charm-option"
+                                    type="button"
+                                    data-charm="○">
+                                    ○
+                                </button>
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <!-- PRICE -->
+                        <div class="price-row">
+
+                            <div>
+                                <span class="price-caption">
+                                    YOUR CREATION
+                                </span>
+
+                                <strong id="custom-price">
+                                    ₹1,299
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button full-button"
+                            id="add-custom-to-cart">
+
+                            Add Your Design to Bag ↗
+
+                        </button>
+
+                        <p class="studio-disclaimer">
+                            Student project demo. No real payment.
+                        </p>
+
+                        <p id="studio-feedback" class="studio-feedback"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section section-wrap" id="about">
+
+            <div class="about-copy">
+
+                <p class="eyebrow">A LITTLE ABOUT US</p>
+
+                <h2>
+                    Jewellery Should Feel<br>
+                    <em>Like You.</em>
+                </h2>
+
+                <p>
+                    Jewelix is a jewellery customization concept.
+                    Choose your favourite details and create a
+                    design that tells your story.
+                </p>
+
+                <a href="#studio" class="text-link">
+                    Create Something Personal ↗
+                </a>
+
+            </div>
+
+            <div class="about-image">
+                <img
+                    src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80"
+                    alt="Elegant jewellery">
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section" id="contact">
+
+            <div class="section-wrap contact-inner">
+
+                <p class="eyebrow">LET'S KEEP IN TOUCH</p>
+
+                <h2>Have a Little <em>Idea?</em></h2>
+
+                <p>Tell us what you would love to create next.</p>
+
+                <form id="contact-form" class="contact-form">
+
+                    <input
+                        id="contact-email"
+                        type="email"
+                        placeholder="Your email address"
+                        required>
+
+                    <button class="primary-button" type="submit">
+                        Say Hello ↗
+                    </button>
+
+                </form>
+
+                <p id="contact-feedback" class="form-feedback"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <a class="brand" href="#home">
+            jewelix<span>✦</span>
+        </a>
+
+        <p>Little treasures, made personal.</p>
+
+        <span>
+            © <span id="year"></span> Jewelix
+        </span>
+
+    </footer>
+
+
+    <!-- MESSAGE POPUP -->
+    <div class="toast" id="toast"></div>
+
+
+    <!-- PRODUCT DETAILS POPUP -->
+    <div class="modal-backdrop" id="product-modal" hidden>
+
+        <section class="product-modal">
+
+            <button class="modal-close" id="modal-close">
+                ×
+            </button>
+
+            <img id="modal-image" src="" alt="">
+
+            <div class="modal-copy">
+
+                <p id="modal-category" class="eyebrow"></p>
+
+                <h2 id="modal-title"></h2>
+
+                <p id="modal-description"></p>
+
+                <strong id="modal-price"></strong>
+
+                <button class="primary-button full-button" id="modal-add">
+                    Add to Bag ↗
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- CART AND WISHLIST PANEL -->
+    <aside class="side-panel" id="side-panel" aria-hidden="true">
+
+        <div class="panel-header">
+
+            <h2 id="panel-title">Your Bag</h2>
+
+            <button id="panel-close" class="modal-close">
+                ×
+            </button>
+
+        </div>
+
+        <div id="panel-items" class="panel-items"></div>
+
+        <div id="panel-footer" class="panel-footer"></div>
+
+    </aside>
+
+    <div class="panel-scrim" id="panel-scrim" hidden></div>
+    <script src="script.js"></script>
+</body>
+</html>
